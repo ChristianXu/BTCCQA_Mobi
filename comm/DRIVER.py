@@ -120,14 +120,19 @@ class macacaServer():
 
     def start_server(self):
 
+        result = []
+
         pool = Pool(processes=self.count)
         port_list = get_port(self.count)
 
         for i in range(self.count):
-            pool.apply_async(self.run_server, args=(self.devices[i], port_list[i]))
+            result.append(pool.apply_async(self.run_server, args=(self.devices[i], port_list[i])))
 
         pool.close()
         pool.join()
+
+        for r in result:
+            print(r.get())
 
     def run_server(self, device, port):
 
@@ -137,8 +142,10 @@ class macacaServer():
         while not self.is_running(port):
             sleep(1)
 
+        print(device)
+
         server_url = {
-            'hostname': "ununtrium.local",
+            'hostname': "lanthanum-4.local",
             'port': port,
         }
         driver = WebDriver(device, server_url)
@@ -249,8 +256,13 @@ class AllTests:
 
         suite = self.create_suite()
 
-        runner = unittest.TextTestRunner()
+        # runner = unittest.TextTestRunner()
+        # runner.run(suite)
+
+        fp = open("result.html", 'wb')
+        runner = comm.HTMLTestRunner(stream=fp, title='test result', description=u'result:')
         runner.run(suite)
+        fp.close()
 
 
 if __name__ == "__main__":

@@ -1,13 +1,11 @@
 __author__ = 'sara'
 
 import unittest
-import logging
 from comm import get_element
 from comm import ReadConfig
 from comm import bsnsCommon
 from time import sleep
-
-logger = logging.getLogger()
+from comm import Log
 
 get_element = get_element
 
@@ -18,15 +16,21 @@ class TestLogin(unittest.TestCase):
 
         self.number_phone = ReadConfig.get_value("config", "phoneNumber")
 
+        self.pin = ReadConfig.get_value("config", "pin")
+
+        self.logger = Log.Logger(loglevel=1, logger="young").getlog()
+
+        print(self.number_phone)
+
         # test Start
-        logger.info("Test login (not first login)")
+        self.logger.info("Test login (not first login)")
 
     def test_login(self):
         sleep(2)
         if get_element("me", "me") is not None:
             bsnsCommon.logout()
 
-        bsnsCommon.login()
+        bsnsCommon.login(self.number_phone,self.pin)
 
         while get_element("me", "me") is None:
             sleep(1)
@@ -35,7 +39,7 @@ class TestLogin(unittest.TestCase):
 
         phone_number = get_element("me", "user_phone").get_property("value")
 
-        logger.info("phone_number ===========>"+phone_number)
+        self.logger.info("phone_number ===========>"+phone_number)
 
         self.check_login(phone_number)
 
@@ -45,9 +49,9 @@ class TestLogin(unittest.TestCase):
         value = number.replace(" ", "")
 
         if self.number_phone in value:
-            logger.info("login OK")
+            self.logger.info("login OK")
         else:
-            logger.info("login NG")
+            self.logger.info("login NG")
 
         # action = TouchAction(self.driver)
         # action.press(5, 358).perform()
@@ -55,4 +59,4 @@ class TestLogin(unittest.TestCase):
     def tearDown(self):
         bsnsCommon.logout()
         # test end
-        logger.info("Test login (not first login)")
+        self.logger.info("Test login (not first login) end")

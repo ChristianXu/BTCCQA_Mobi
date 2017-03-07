@@ -1,5 +1,12 @@
+testSignIn
+#testLogin
 #testSend
+#testSendByBitcoinAddress
+#testChangeMobiPIN
+#testConvert
 #testReceive
-testLogin
+#testModifyMeProfile
 #testAddDeleteWallets
 #testConvertBetweenWallets
+#testSubmitFeedback
+#testForgetPin
