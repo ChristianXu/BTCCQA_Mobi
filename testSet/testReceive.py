@@ -1,82 +1,78 @@
-__author__ = 'sara'
+__author__ = 'Apple'
 
 import unittest
+import logging
 from time import sleep
+from comm import get_element, get_elements
+from comm.common import ReadConfig
+from comm import bsnsCommon
+from comm import Log
 
-from appium.webdriver.common.touch_action import TouchAction
+get_element = get_element
+get_elements = get_elements
 
-from testSet import MyDriver
-import testSet as Log
-from testSet import Element
-import readConfig as readConfig
-import testSet as bcommon
-
-readConfigLocal = readConfig.ReadConfig()
-
+logger = logging.getLogger()
 
 class TestReceive(unittest.TestCase):
 
     def setUp(self):
-        # get Driver
-        self.driver = MyDriver.get_driver()
-        # self.caseNo = self.case_name
 
-        # get Log
-        self.log = Log.MyLog().get_log()
-        self.logger = self.log.get_my_logger()
+        self.number_phone = ReadConfig.get_value("config", "phoneNumber")
 
-        self.number_phone = readConfigLocal.getConfigValue("phoneNumber")
+        self.pin = ReadConfig.get_value("config", "pin")
+
+        self.logger = Log.Logger(loglevel=1, logger="young").getlog()
 
         # test Start
-        self.log.build_start_line("Test receive bitcoins")
+        self.logger.info("Test receive bitcoins")
 
     def testReceive(self):
 
         isOk = True
         # 如果登陆 先登出
-        if Element("me", "me").is_exist():
-            bcommon.logout()
+        # if get_element("me", "me").is_exist():
+        #     bsnsCommon.logout()
+        #
+        # bsnsCommon.login(self.number_phone, self.pin)
+        sleep(3)
 
-        bcommon.login()
-
-        while not Element("Transactions", "Transactions").is_exist():
+        while get_element("wallets", "wallets") is None:
             sleep(1)
 
-        Element("Transactions", "Transactions").click()
+        get_element("wallets", "wallets").click()
 
-        Element("Transactions", "receive").click()
+        get_element("wallets", "receive").click()
 
-        phone_number = Element("Transactions", "phone_number").get_attribute("value").replace(" ", "")
+        sleep(3)
+        phone_number = get_element("wallets", "phone_number").get_attribute("value").replace(" ", "")
+
+        # qr_code = get_element("wallets", "qr_code")
 
         if self.number_phone not in phone_number:
             self.logger.info("phone number is not show")
             isOk = False
 
-        if not Element("Transactions", "qr_code").is_exist():
+        if get_element("wallets", "qr_code").is_displayed():
             self.logger.info("qr code is not show")
+            print('qr code is show')
             isOk = False
 
-        if not Element("Transactions", "bitcoin_address").is_exist():
+        if get_element("wallets", "private_key").is_displayed():
+        # if not get_element("Transactions", "bitcoin_address").is_exist():
             self.logger.info("bitcoin address is not show")
+            print('bitcoin address is  show')
             isOk = False
-
-        # Element("Transactions", "share_icon").click()
-        #
-        # if not Element("Transactions", "share_apps").is_exist():
-        #     self.logger.info("share_apps address is not show")
-        #     isOk = False
-        # else:
-        #     Element("comm", "cancel").click()
 
         if isOk:
-            self.log.write_result("receive bitcoins OK")
+            self.logger.info("receive bitcoins OK")
         else:
-            self.log.write_result("receive bitcoins NG")
+            self.logger.info("receive bitcoins NG")
 
 
     def tearDown(self):
+        pass
 
-        TouchAction(self.driver).tap(x=28, y=40).perform()
-        bcommon.logout()
+        # TouchAction(self.driver).tap(x=28, y=40).perform()
+        # bcommon.logout()
         # test end
-        self.log.build_end_line("Test receive bitcoins")
+        self.logger.info("Test receive bitcoins")

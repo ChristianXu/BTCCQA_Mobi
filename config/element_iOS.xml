@@ -31,10 +31,95 @@
 
     </activity>
 
+
+    <!--Sign In-->
+    <activity name="sign_in">
+
+        <element name="country_code">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeTextField[1]</pathvalue>
+        </element>
+
+        <element name="phone_number_input">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeTextField[2]</pathvalue>
+        </element>
+
+        <element name="next">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeButton[1]</pathvalue>
+        </element>
+
+        <element name="create_mobi_pin">
+            <pathtype>name</pathtype>
+            <pathvalue>Mobi PIN</pathvalue>
+        </element>
+
+        <element name="confirm_new_mobi_pin">
+            <pathtype>name</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeStaticText[1]</pathvalue>
+        </element>
+
+        <element name="skip_slider"><!--点击跳过slidder页面-->
+            <pathtype>name</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeNavigationBar[1]/XCUIElementTypeButton[1]</pathvalue>
+        </element>
+
+    </activity>
+
+
+    <!--Forget PIN-->
+    <activity name="forget_pin"><!--activity名称-->
+
+        <element name="forget_pin">
+            <pathtype>name</pathtype>
+            <pathvalue>Forget your PIN?</pathvalue>
+        </element>
+
+        <element name="create_new_mobi_PIN">
+            <pathtype>name</pathtype>
+            <pathvalue>Create a new Mobi PIN</pathvalue>
+        </element>
+
+        <element name="mobi_pin">
+            <pathtype>name</pathtype>
+            <pathvalue>Mobi PIN</pathvalue>
+        </element>
+
+        <element name="confirm_new_mobi_PIN">
+            <pathtype>name</pathtype>
+            <pathvalue>Confirm your new Mobi PIN</pathvalue>
+        </element>
+
+        <element name="sms_code_verification">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeNavigationBar[1]/XCUIElementTypeStaticText[1]</pathvalue>
+        </element>
+
+        <element name="start_set">
+            <pathtype>name</pathtype>
+            <pathvalue>Start Reset</pathvalue>
+        </element>
+
+        <element name="reset_now">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeButton[2]</pathvalue>
+        </element>
+
+        <element name="login_with_mobi_pin">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeButton[1]</pathvalue>
+        </element>
+
+    </activity>
+
+
+    <!--me页面的操作-->
     <activity name="me">
+
         <element name="me">
             <pathtype>name</pathtype>
-            <pathvalue>me</pathvalue>
+            <pathvalue>Me</pathvalue>
         </element>
 
         <element name="user_phone">
@@ -46,43 +131,200 @@
             <pathtype>name</pathtype>
             <pathvalue>Settings</pathvalue>
         </element>
+
         <element name="Sign_out">
             <pathtype>name</pathtype>
             <pathvalue>Sign Out</pathvalue>
         </element>
+
+        <element name="avatar">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeStaticText[1]</pathvalue>
+        </element>
+
+        <element name="edit">
+            <pathtype>name</pathtype>
+            <pathvalue>Edit</pathvalue>
+        </element>
+
+        <element name="modify_name">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeScrollView[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeTextField[1]</pathvalue>
+        </element>
+
+        <element name="input_nickname">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeScrollView[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeTextField[1]</pathvalue>
+        </element>
+
+        <element name="first_name">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeScrollView[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeTextField[1]</pathvalue>
+        </element>
+
+        <element name="last_name">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeScrollView[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[4]/XCUIElementTypeTextField[1]</pathvalue>
+        </element>
+
+        <element name="home_address">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeScrollView[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[6]/XCUIElementTypeTextView[1]</pathvalue>
+        </element>
+
+        <element name="country">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeScrollView[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[7]/XCUIElementTypeStaticText[1]</pathvalue>
+        </element>
+
+        <element name="choose_country">
+            <pathtype>name</pathtype>
+            <pathvalue>Austria</pathvalue>
+        </element>
+
+        <element name="city">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeScrollView[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[8]/XCUIElementTypeTextField[1]</pathvalue>
+        </element>
+
+        <element name="postal_code">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeScrollView[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[9]/XCUIElementTypeTextField[1]</pathvalue>
+        </element>
+
+        <element name="save">
+            <pathtype>name</pathtype>
+            <pathvalue>Save</pathvalue>
+        </element>
+
+        <element name="back">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeNavigationBar[1]/XCUIElementTypeButton[1]</pathvalue>
+        </element>
+
+        <!--Change Mobi PIN-->
+        <element name="change_mobi_PIN">
+            <pathtype>name</pathtype>
+            <pathvalue>Change Mobi PIN</pathvalue>
+        </element>
+
+        <!--Submit Feedback-->
+        <element name="Feedback">
+            <pathtype>name</pathtype>
+            <pathvalue>Feedback</pathvalue>
+        </element>
+
+        <element name="Feedback_context">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeTextView[1]</pathvalue>
+        </element>
+
+        <element name="Feedback_submit_successful">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeAlert[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeStaticText[2]</pathvalue>
+        </element>
+        <element name="close_feedback_success_popup">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeAlert[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[1]</pathvalue>
+        </element>
     </activity>
+
+
 
     <activity name="wallets">
         <element name="wallets">
             <pathtype>name</pathtype>
-            <pathvalue>wallets</pathvalue>
+            <pathvalue>Wallets</pathvalue>
         </element>
 
+        <!--Send Operation-->
         <element name="send">
             <pathtype>name</pathtype>
             <pathvalue>Send</pathvalue>
         </element>
+
         <element name="phone_number">
-            <pathtype>name</pathtype>
-            <pathvalue>Phone Number</pathvalue>
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeStaticText[1]</pathvalue>
         </element>
+
+        <element name="qr_code">
+            <pathtype><name>xpath</name></pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeImage[1]</pathvalue>
+        </element>
+
+        <element name="private_key">
+            <pathtype>name</pathtype>
+            <pathvalue>2MsdJWp6m1grhsiwbozFRWsxvk9P9wRHV4g</pathvalue>
+        </element>
+
          <element name="phone_input">
             <pathtype>xpath</pathtype>
             <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[3]/XCUIElementTypeTextField[2]</pathvalue>
         </element>
+
         <element name="transaction_successful">
             <pathtype>name</pathtype>
             <pathvalue>Transaction Successful</pathvalue>
         </element>
 
+        <element name="switch_onchian">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[3]/XCUIElementTypeSwitch[1]</pathvalue>
+        </element>
+
+        <element name="Add Memo">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[3]/XCUIElementTypeButton[1]</pathvalue>
+        </element>
+
+        <element name="Memo Content">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]</pathvalue>
+        </element>
+
+        <element name="bitcoin_address">
+            <pathtype>name</pathtype>
+            <pathvalue>Bitcoin Address</pathvalue>
+        </element>
+
+        <element name="bitcoin_address_input">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeTextView[1]/XCUIElementTypeStaticText[1]</pathvalue>
+        </element>
+        <element name="paste">
+            <pathtype>name</pathtype>
+            <pathvalue>Paste</pathvalue>
+        </element>
+
+        <!--add message-->
+        <element name="add_message">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeStaticText[1]</pathvalue>
+        </element>
+
+        <!-- Convert Operation-->
         <element name="convert">
             <pathtype>name</pathtype>
             <pathvalue>Convert</pathvalue>
+        </element>
+        <element name="on_enter_amount">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeTextField[1]</pathvalue>
+        </element>
+
+        <element name="conversion_successful">
+            <pathtype>name</pathtype>
+            <pathvalue>Conversion Successful</pathvalue>
         </element>
 
         <element name="icon_convert">
             <pathtype>name</pathtype>
             <pathvalue>icon convert input</pathvalue>
+        </element>
+          <element name="under_enter_amount">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[4]/XCUIElementTypeTextField[1]</pathvalue>
         </element>
          <element name="convert_successfully">
             <pathtype>name</pathtype>
@@ -92,6 +334,43 @@
         <element name="receive">
             <pathtype>name</pathtype>
             <pathvalue>Receive</pathvalue>
+        </element>
+
+
+        <!--Add Wallets-->
+        <element name="wallets_icon">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeNavigationBar[1]/XCUIElementTypeButton[2]</pathvalue>
+        </element>
+        <element name="AZN">
+            <pathtype>name</pathtype>
+            <pathvalue>Azerbaijani Manat</pathvalue>
+        </element>
+        <element name="AWG">
+            <pathtype>name</pathtype>
+            <pathvalue>Aruban Florin</pathvalue>
+        </element>
+         <element name="AMD">
+            <pathtype>name</pathtype>
+            <pathvalue>Armenian Dram</pathvalue>
+        </element>
+        <element name="wallets_add">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeButton[1]</pathvalue>
+        </element>
+
+        <!--Delete Wallets-->
+        <element name="edit">
+            <pathtype>name</pathtype>
+            <pathvalue>Edit</pathvalue>
+        </element>
+        <element name="minus_icon">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeCollectionView[1]/XCUIElementTypeCell[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeImage[1]</pathvalue>
+        </element>
+        <element name="trash_icon">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeCollectionView[1]/XCUIElementTypeCell[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]</pathvalue>
         </element>
 
     </activity>
@@ -130,6 +409,18 @@
         <element name="back">
             <pathtype>name</pathtype>
             <pathvalue>Back</pathvalue>
+        </element>
+        <element name="save">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[3]/XCUIElementTypeButton[1]</pathvalue>
+        </element>
+        <element name="submit">
+            <pathtype>name</pathtype>
+            <pathvalue>Submit</pathvalue>
+        </element>
+        <element name="upper_left_back">
+            <pathtype>xpath</pathtype>
+            <pathvalue>//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeNavigationBar[1]/XCUIElementTypeButton[1]</pathvalue>
         </element>
     </activity>
 

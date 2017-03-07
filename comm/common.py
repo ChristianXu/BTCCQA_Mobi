@@ -125,6 +125,21 @@ def input_number(number):
                 continue
 
 
+
+def clear_text(during=None):
+    """
+       clear_text
+       :param during:
+       :return:
+       """
+    element = DRIVER.driver.element("xpath", "//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeScrollView[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeTextField[1]")
+    element.click()
+    element.clear()
+    element.send_keys('zhen xin')
+
+
+
+
 class ReadConfig:
 
     cf = None
